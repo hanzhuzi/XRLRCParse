@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		014AFC4C1C80689F000F74AA /* LrcModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 014AFC491C80689F000F74AA /* LrcModel.m */; };
-		014AFC4D1C80689F000F74AA /* LrcParseTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 014AFC4B1C80689F000F74AA /* LrcParseTool.m */; };
 		01D19CB81C802D0F00C963F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D19CB71C802D0F00C963F2 /* main.m */; };
 		01D19CBB1C802D0F00C963F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D19CBA1C802D0F00C963F2 /* AppDelegate.m */; };
-		01D19CBE1C802D0F00C963F2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D19CBD1C802D0F00C963F2 /* ViewController.m */; };
 		01D19CC11C802D0F00C963F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01D19CBF1C802D0F00C963F2 /* Main.storyboard */; };
 		01D19CC31C802D0F00C963F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01D19CC21C802D0F00C963F2 /* Assets.xcassets */; };
 		01D19CC61C802D0F00C963F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01D19CC41C802D0F00C963F2 /* LaunchScreen.storyboard */; };
 		01D19CD11C802D0F00C963F2 /* XRLrcParseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D19CD01C802D0F00C963F2 /* XRLrcParseTests.m */; };
 		01D19CDC1C802D0F00C963F2 /* XRLrcParseUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D19CDB1C802D0F00C963F2 /* XRLrcParseUITests.m */; };
-		01D19CEF1C802EAB00C963F2 /* heart.txt in Resources */ = {isa = PBXBuildFile; fileRef = 01D19CEE1C802EAB00C963F2 /* heart.txt */; };
+		01D19CEF1C802EAB00C963F2 /* lrc.txt in Resources */ = {isa = PBXBuildFile; fileRef = 01D19CEE1C802EAB00C963F2 /* lrc.txt */; };
+		E133E74D1C8085FB00A6E697 /* LrcModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E133E74A1C8085FB00A6E697 /* LrcModel.m */; };
+		E133E74E1C8085FB00A6E697 /* LrcParseTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E133E74C1C8085FB00A6E697 /* LrcParseTool.m */; };
+		E133E7511C80865000A6E697 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E133E7501C80865000A6E697 /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,16 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		014AFC481C80689F000F74AA /* LrcModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LrcModel.h; sourceTree = "<group>"; };
-		014AFC491C80689F000F74AA /* LrcModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LrcModel.m; sourceTree = "<group>"; };
-		014AFC4A1C80689F000F74AA /* LrcParseTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LrcParseTool.h; sourceTree = "<group>"; };
-		014AFC4B1C80689F000F74AA /* LrcParseTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LrcParseTool.m; sourceTree = "<group>"; };
 		01D19CB31C802D0F00C963F2 /* XRLrcParse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XRLrcParse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01D19CB71C802D0F00C963F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		01D19CB91C802D0F00C963F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		01D19CBA1C802D0F00C963F2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		01D19CBC1C802D0F00C963F2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		01D19CBD1C802D0F00C963F2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		01D19CC01C802D0F00C963F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		01D19CC21C802D0F00C963F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01D19CC51C802D0F00C963F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,7 +52,13 @@
 		01D19CD71C802D0F00C963F2 /* XRLrcParseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XRLrcParseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01D19CDB1C802D0F00C963F2 /* XRLrcParseUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRLrcParseUITests.m; sourceTree = "<group>"; };
 		01D19CDD1C802D0F00C963F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		01D19CEE1C802EAB00C963F2 /* heart.txt */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text; path = heart.txt; sourceTree = "<group>"; };
+		01D19CEE1C802EAB00C963F2 /* lrc.txt */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text; path = lrc.txt; sourceTree = "<group>"; };
+		E133E7491C8085FB00A6E697 /* LrcModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LrcModel.h; sourceTree = "<group>"; };
+		E133E74A1C8085FB00A6E697 /* LrcModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LrcModel.m; sourceTree = "<group>"; };
+		E133E74B1C8085FB00A6E697 /* LrcParseTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LrcParseTool.h; sourceTree = "<group>"; };
+		E133E74C1C8085FB00A6E697 /* LrcParseTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LrcParseTool.m; sourceTree = "<group>"; };
+		E133E74F1C80865000A6E697 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E133E7501C80865000A6E697 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,17 +86,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		014AFC471C80689F000F74AA /* LrcParse */ = {
-			isa = PBXGroup;
-			children = (
-				014AFC481C80689F000F74AA /* LrcModel.h */,
-				014AFC491C80689F000F74AA /* LrcModel.m */,
-				014AFC4A1C80689F000F74AA /* LrcParseTool.h */,
-				014AFC4B1C80689F000F74AA /* LrcParseTool.m */,
-			);
-			path = LrcParse;
-			sourceTree = "<group>";
-		};
 		01D19CAA1C802D0F00C963F2 = {
 			isa = PBXGroup;
 			children = (
@@ -120,11 +109,9 @@
 		01D19CB51C802D0F00C963F2 /* XRLrcParse */ = {
 			isa = PBXGroup;
 			children = (
-				014AFC471C80689F000F74AA /* LrcParse */,
+				E133E7341C8084F900A6E697 /* Classes */,
 				01D19CB91C802D0F00C963F2 /* AppDelegate.h */,
 				01D19CBA1C802D0F00C963F2 /* AppDelegate.m */,
-				01D19CBC1C802D0F00C963F2 /* ViewController.h */,
-				01D19CBD1C802D0F00C963F2 /* ViewController.m */,
 				01D19CBF1C802D0F00C963F2 /* Main.storyboard */,
 				01D19CC21C802D0F00C963F2 /* Assets.xcassets */,
 				01D19CC41C802D0F00C963F2 /* LaunchScreen.storyboard */,
@@ -137,7 +124,7 @@
 		01D19CB61C802D0F00C963F2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				01D19CEE1C802EAB00C963F2 /* heart.txt */,
+				01D19CEE1C802EAB00C963F2 /* lrc.txt */,
 				01D19CB71C802D0F00C963F2 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -159,6 +146,51 @@
 				01D19CDD1C802D0F00C963F2 /* Info.plist */,
 			);
 			path = XRLrcParseUITests;
+			sourceTree = "<group>";
+		};
+		E133E7341C8084F900A6E697 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E133E73E1C8085CC00A6E697 /* Controllers */,
+				E133E7441C8085CC00A6E697 /* Tools */,
+				E133E7451C8085CC00A6E697 /* Views */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		E133E73E1C8085CC00A6E697 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E133E74F1C80865000A6E697 /* ViewController.h */,
+				E133E7501C80865000A6E697 /* ViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E133E7441C8085CC00A6E697 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				E133E7481C8085FB00A6E697 /* LrcParse */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		E133E7451C8085CC00A6E697 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E133E7481C8085FB00A6E697 /* LrcParse */ = {
+			isa = PBXGroup;
+			children = (
+				E133E7491C8085FB00A6E697 /* LrcModel.h */,
+				E133E74A1C8085FB00A6E697 /* LrcModel.m */,
+				E133E74B1C8085FB00A6E697 /* LrcParseTool.h */,
+				E133E74C1C8085FB00A6E697 /* LrcParseTool.m */,
+			);
+			path = LrcParse;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,7 +299,7 @@
 				01D19CC61C802D0F00C963F2 /* LaunchScreen.storyboard in Resources */,
 				01D19CC31C802D0F00C963F2 /* Assets.xcassets in Resources */,
 				01D19CC11C802D0F00C963F2 /* Main.storyboard in Resources */,
-				01D19CEF1C802EAB00C963F2 /* heart.txt in Resources */,
+				01D19CEF1C802EAB00C963F2 /* lrc.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,11 +324,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01D19CBE1C802D0F00C963F2 /* ViewController.m in Sources */,
+				E133E7511C80865000A6E697 /* ViewController.m in Sources */,
 				01D19CBB1C802D0F00C963F2 /* AppDelegate.m in Sources */,
 				01D19CB81C802D0F00C963F2 /* main.m in Sources */,
-				014AFC4D1C80689F000F74AA /* LrcParseTool.m in Sources */,
-				014AFC4C1C80689F000F74AA /* LrcModel.m in Sources */,
+				E133E74E1C8085FB00A6E697 /* LrcParseTool.m in Sources */,
+				E133E74D1C8085FB00A6E697 /* LrcModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

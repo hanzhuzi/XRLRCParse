@@ -17,7 +17,6 @@
 
 @interface ViewController ()
 
-@property (nonatomic, strong) LrcParseTool * parseTool;
 @property (nonatomic, strong) NSArray * lrcArray;
 @property (nonatomic, strong) NSTimer * timer;
 @property (nonatomic, assign) double    seccond;
@@ -38,8 +37,7 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        _parseTool = [LrcParseTool sharedToolWithLrcFileName:@"heart.txt"];
-        _lrcArray = [_parseTool lrcInfoFromLrcFile];
+        _lrcArray = [LrcParseTool lrcInfoFromLrcFileWithFileName:@"lrc.txt"];
     }
     
     return self;
@@ -48,8 +46,7 @@
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super initWithCoder:aDecoder]) {
-        _parseTool = [LrcParseTool sharedToolWithLrcFileName:@"heart.txt"];
-        _lrcArray = [_parseTool lrcInfoFromLrcFile];
+        _lrcArray = [LrcParseTool lrcInfoFromLrcFileWithFileName:@"lrc.txt"];
     }
     
     return self;
