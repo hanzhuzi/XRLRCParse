@@ -14,6 +14,7 @@
 #import "ViewController.h"
 #import "LrcParseTool.h"
 #import "LrcModel.h"
+#import "LrcDisplayCell.h"
 
 static NSString * const cellID = @"myCellID";
 
@@ -91,6 +92,7 @@ static NSString * const cellID = @"myCellID";
 - (void)setupTableView
 {
     self.myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.myTableView registerNib:[UINib nibWithNibName:@"LrcDisplayCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:cellID];
     self.myTableView.tableFooterView = [[UIView alloc] init];
 }
 
@@ -114,6 +116,11 @@ static NSString * const cellID = @"myCellID";
 
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 #pragma mark - UITableViewDelegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -129,23 +136,23 @@ static NSString * const cellID = @"myCellID";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    LrcDisplayCell * cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"LrcDisplayCell" owner:nil options:nil] lastObject];
     }
     
-    cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-    cell.textLabel.textAlignment = NSTextAlignmentCenter;
-    cell.textLabel.font = [UIFont systemFontOfSize:15.0];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.backgroundColor = [UIColor clearColor];
+    
     LrcModel * model = self.lrcArray[indexPath.row];
-    cell.textLabel.text = model.lrcStr;
+    [cell configCellWithLrcModel:model];
     
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 40.0;
+    return 30.0;
 }
 
 #pragma mark - UIScrollViewDelegate
