@@ -8,11 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+@class LrcInfoModel;
 @interface LrcParseTool : NSObject
 
 /**
- *  得到解析好的歌词
+ *  @brief  歌词解析
+ *  
+ *  @param  本地歌词文件名
+ *  @return 解析好的歌词 + 歌词头部信息
  */
-+ (NSMutableArray *)lrcInfoFromLrcFileWithFileName:(NSString *)fileName;
++ (void)lrcInfoFromLrcFileWithFileName:(NSString *)fileName completion:(void(^)(NSMutableArray * lrcArray,
+                                                                                LrcInfoModel *infoModel))completion;
 
 @end

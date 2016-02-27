@@ -14,17 +14,21 @@
 #import "ViewController.h"
 #import "LrcParseTool.h"
 #import "LrcModel.h"
+#import "LrcInfoModel.h"
 #import "LrcDisplayCell.h"
 
 static NSString * const cellID = @"myCellID";
 
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) NSArray * lrcArray;
+@property (nonatomic, strong) NSMutableArray * lrcArray;
 @property (nonatomic, strong) NSTimer * timer;
 @property (nonatomic, assign) double    seccond;
+@property (nonatomic, strong) LrcInfoModel * infoModel;
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
 @property (weak, nonatomic) IBOutlet UISlider *playCtrolSlider;
+@property (weak, nonatomic) IBOutlet UILabel *lrcTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *lrcAuthorLabel;
 
 @end
 
@@ -41,7 +45,12 @@ static NSString * const cellID = @"myCellID";
 - (instancetype)init
 {
     if (self = [super init]) {
-        _lrcArray = [LrcParseTool lrcInfoFromLrcFileWithFileName:@"lrc.txt"];
+        __weak __typeof(self) weakSelf = self;
+        
+        [LrcParseTool lrcInfoFromLrcFileWithFileName:@"lrc.txt" completion:^(NSMutableArray *lrcArray, LrcInfoModel *infoModel) {
+            weakSelf.lrcArray = lrcArray;
+            weakSelf.infoModel = infoModel;
+        }];
     }
     
     return self;
@@ -50,7 +59,21 @@ static NSString * const cellID = @"myCellID";
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super initWithCoder:aDecoder]) {
-        _lrcArray = [LrcParseTool lrcInfoFromLrcFileWithFileName:@"lrc.txt"];
+        __weak __typeof(self) weakSelf = self;
+        
+        [LrcParseTool lrcInfoFromLrcFileWithFileName:@"lrc.txt" completion:^(NSMutableArray *lrcArray, LrcInfoModel *infoModel) {
+            weakSelf.lrcArray = lrcArray;
+            
+            // 为了从中间开始滚动，添加几个空白歌词
+            for (NSUInteger i = 0; i < 4; i++) {
+                LrcModel * model = [[LrcModel alloc] init];
+                model.timeStr = @"0.0";
+                model.lrcStr  = @"";
+                [weakSelf.lrcArray insertObject:model atIndex:0];
+            }
+            
+            weakSelf.infoModel = infoModel;
+        }];
     }
     
     return self;
@@ -99,6 +122,9 @@ static NSString * const cellID = @"myCellID";
 - (void)setupUI
 {
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.lrcTitleLabel.text = self.infoModel.lrc_title;
+    self.lrcAuthorLabel.text = self.infoModel.lrc_autor;
     
     [self.playCtrolSlider setThumbImage:[UIImage imageNamed:@"player-progress-point-h"] forState:UIControlStateNormal];
 }
@@ -153,6 +179,11 @@ static NSString * const cellID = @"myCellID";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 30.0;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
 }
 
 #pragma mark - UIScrollViewDelegate

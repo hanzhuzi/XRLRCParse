@@ -14,7 +14,7 @@
 - (void)awakeFromNib {
     self.lrcLabel.textAlignment = NSTextAlignmentCenter;
     self.lrcLabel.textColor = [UIColor whiteColor];
-    self.lrcLabel.font = [UIFont systemFontOfSize:15.0];
+    self.lrcLabel.font = [UIFont systemFontOfSize:14.0];
 }
 
 - (void)configCellWithLrcModel:(LrcModel *)model
@@ -34,7 +34,7 @@
         self.lrcLabel.font = [UIFont systemFontOfSize:16.0];
     }else {
         self.lrcLabel.textColor = [UIColor whiteColor];
-        self.lrcLabel.font = [UIFont systemFontOfSize:15.0];
+        self.lrcLabel.font = [UIFont systemFontOfSize:14.0];
     }
 }
 
