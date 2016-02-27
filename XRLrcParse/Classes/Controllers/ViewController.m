@@ -47,7 +47,7 @@ static NSString * const cellID = @"myCellID";
     if (self = [super init]) {
         __weak __typeof(self) weakSelf = self;
         
-        [LrcParseTool lrcInfoFromLrcFileWithFileName:@"lrc.txt" completion:^(NSMutableArray *lrcArray, LrcInfoModel *infoModel) {
+        [LrcParseTool lrcInfoFromLrcFileWithFileName:@"恋人心.lrc" completion:^(NSMutableArray *lrcArray, LrcInfoModel *infoModel) {
             weakSelf.lrcArray = lrcArray;
             weakSelf.infoModel = infoModel;
         }];
@@ -61,7 +61,7 @@ static NSString * const cellID = @"myCellID";
     if (self = [super initWithCoder:aDecoder]) {
         __weak __typeof(self) weakSelf = self;
         
-        [LrcParseTool lrcInfoFromLrcFileWithFileName:@"lrc.txt" completion:^(NSMutableArray *lrcArray, LrcInfoModel *infoModel) {
+        [LrcParseTool lrcInfoFromLrcFileWithFileName:@"恋人心.lrc" completion:^(NSMutableArray *lrcArray, LrcInfoModel *infoModel) {
             weakSelf.lrcArray = lrcArray;
             
             // 为了从中间开始滚动，添加几个空白歌词

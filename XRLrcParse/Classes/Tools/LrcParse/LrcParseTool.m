@@ -46,7 +46,9 @@
     return nil;
 }
 
-// 格式 [xx:xxxxxx]
+/**
+ *  解析格式：[ti:你若安好 便是晴天]
+ */
 + (NSString *)parseStrWithLrcString:(NSString *)lrcStr
 {
     NSArray * strArray = [lrcStr componentsSeparatedByString:@":"];
@@ -76,7 +78,7 @@
     NSArray * lrcArray = [lrcStr componentsSeparatedByString:@"\n"];
     LrcInfoModel * infoModel = [[LrcInfoModel alloc] init];
     
-    for (NSInteger i = 0; i < lrcArray.count; i++) {
+    for (NSUInteger i = 0; i < lrcArray.count; i++) {
         NSString * lineLrcStr = lrcArray[i];
         // 以']'进行分割
         NSArray * lineArray = [lineLrcStr componentsSeparatedByString:@"]"];

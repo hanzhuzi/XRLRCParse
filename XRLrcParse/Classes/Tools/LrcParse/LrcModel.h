@@ -14,7 +14,7 @@
 
 @interface LrcModel : NSObject
 
-@property (nonatomic, strong) NSString * timeStr;
-@property (nonatomic, strong) NSString * lrcStr;
+@property (nonatomic, copy) NSString * timeStr;
+@property (nonatomic, copy) NSString * lrcStr;
 
 @end
