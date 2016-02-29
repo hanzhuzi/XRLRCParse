@@ -118,16 +118,9 @@ static int const spaceLineNumber = 4; // 空白行数
     self.playCtrolSlider.value = self.player.progress;
     [self updateTimeDisplay];
     for (NSInteger i = 4; i< self.lrcArray.count - spaceLineNumber; i++) {
-        LrcModel * model1 = self.lrcArray[i];
-        LrcModel * model2 = self.lrcArray[i+1];
-        
-        if (self.player.progress <= [model1.timeStr doubleValue]) {
+        LrcModel * model = self.lrcArray[i];
+        if (self.player.progress >= [model.timeStr doubleValue]) {
             [self.myTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0] animated:YES scrollPosition:UITableViewScrollPositionMiddle];
-        }else if (self.player.progress > [model1.timeStr doubleValue] && self.player.progress < [model2.timeStr doubleValue]) {
-            [self.myTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0] animated:YES scrollPosition:UITableViewScrollPositionMiddle];
-        }else if (self.player.progress >= [model2.timeStr doubleValue]) {
-            // 最后一句歌词
-            [self.myTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:i + 1 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionMiddle];
         }
     }
 }
