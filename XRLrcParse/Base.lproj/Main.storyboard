@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4" translatesAutoresizingMaskIntoConstraints="NO" id="4f6-ge-ffE">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3" translatesAutoresizingMaskIntoConstraints="NO" id="4f6-ge-ffE">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y1B-wY-ugf" userLabel="backgroundView">
@@ -202,10 +202,12 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="leftTimeLabel" destination="eeG-dz-NCF" id="4o5-uN-I24"/>
                         <outlet property="lrcAuthorLabel" destination="3Ow-ud-2Oa" id="uLJ-JN-MGD"/>
                         <outlet property="lrcTitleLabel" destination="fNt-OB-8r0" id="NEG-XI-kMB"/>
                         <outlet property="myTableView" destination="Q7B-CG-AiV" id="Hyd-gm-iXf"/>
                         <outlet property="playCtrolSlider" destination="iRz-EU-OyI" id="2q2-Zx-cCT"/>
+                        <outlet property="rightTimeLabel" destination="lE9-QQ-fQe" id="ZgR-v1-1uu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -214,7 +216,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="4" width="450" height="671"/>
+        <image name="3" width="489" height="777"/>
         <image name="like" width="24" height="22"/>
         <image name="list" width="26" height="20"/>
         <image name="next" width="35" height="35"/>

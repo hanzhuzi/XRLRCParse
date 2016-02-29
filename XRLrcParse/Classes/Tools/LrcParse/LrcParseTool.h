@@ -19,5 +19,4 @@
  */
 + (void)lrcInfoFromLrcFileWithFileName:(NSString *)fileName completion:(void(^)(NSMutableArray * lrcArray,
                                                                                 LrcInfoModel *infoModel))completion;
-
 @end
