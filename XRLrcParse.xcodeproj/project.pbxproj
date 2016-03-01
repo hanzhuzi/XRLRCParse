@@ -26,6 +26,10 @@
 		01D19CC61C802D0F00C963F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01D19CC41C802D0F00C963F2 /* LaunchScreen.storyboard */; };
 		01D19CD11C802D0F00C963F2 /* XRLrcParseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D19CD01C802D0F00C963F2 /* XRLrcParseTests.m */; };
 		01D19CDC1C802D0F00C963F2 /* XRLrcParseUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D19CDB1C802D0F00C963F2 /* XRLrcParseUITests.m */; };
+		01E36C101C857B340011CB03 /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E36C0F1C857B340011CB03 /* CustomNavigationController.m */; };
+		01E36C131C857C3F0011CB03 /* XRBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E36C121C857C3F0011CB03 /* XRBaseViewController.m */; };
+		01E36C161C857C650011CB03 /* PlayListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E36C151C857C650011CB03 /* PlayListViewController.m */; };
+		01E36C191C857C760011CB03 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E36C181C857C760011CB03 /* PlayerViewController.m */; };
 		01FDAD351C817024000E8AD7 /* LrcDisplayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FDAD331C817024000E8AD7 /* LrcDisplayCell.m */; };
 		01FDAD361C817024000E8AD7 /* LrcDisplayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01FDAD341C817024000E8AD7 /* LrcDisplayCell.xib */; };
 		01FDAD391C81A0BF000E8AD7 /* LrcInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FDAD381C81A0BF000E8AD7 /* LrcInfoModel.m */; };
@@ -89,6 +93,14 @@
 		01D19CD71C802D0F00C963F2 /* XRLrcParseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XRLrcParseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01D19CDB1C802D0F00C963F2 /* XRLrcParseUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRLrcParseUITests.m; sourceTree = "<group>"; };
 		01D19CDD1C802D0F00C963F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01E36C0E1C857B340011CB03 /* CustomNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationController.h; sourceTree = "<group>"; };
+		01E36C0F1C857B340011CB03 /* CustomNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationController.m; sourceTree = "<group>"; };
+		01E36C111C857C3F0011CB03 /* XRBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRBaseViewController.h; sourceTree = "<group>"; };
+		01E36C121C857C3F0011CB03 /* XRBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRBaseViewController.m; sourceTree = "<group>"; };
+		01E36C141C857C650011CB03 /* PlayListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayListViewController.h; sourceTree = "<group>"; };
+		01E36C151C857C650011CB03 /* PlayListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayListViewController.m; sourceTree = "<group>"; };
+		01E36C171C857C760011CB03 /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
+		01E36C181C857C760011CB03 /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
 		01FDAD321C817024000E8AD7 /* LrcDisplayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LrcDisplayCell.h; sourceTree = "<group>"; };
 		01FDAD331C817024000E8AD7 /* LrcDisplayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LrcDisplayCell.m; sourceTree = "<group>"; };
 		01FDAD341C817024000E8AD7 /* LrcDisplayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LrcDisplayCell.xib; sourceTree = "<group>"; };
@@ -234,6 +246,15 @@
 			path = XRLrcParseUITests;
 			sourceTree = "<group>";
 		};
+		01E36C0D1C857AED0011CB03 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				01E36C0E1C857B340011CB03 /* CustomNavigationController.h */,
+				01E36C0F1C857B340011CB03 /* CustomNavigationController.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		01FDAD311C816FFB000E8AD7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +268,7 @@
 		E133E7341C8084F900A6E697 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				01E36C0D1C857AED0011CB03 /* Common */,
 				01FDAD311C816FFB000E8AD7 /* Views */,
 				E133E73E1C8085CC00A6E697 /* Controllers */,
 				E133E7441C8085CC00A6E697 /* Tools */,
@@ -259,6 +281,12 @@
 			children = (
 				E133E74F1C80865000A6E697 /* ViewController.h */,
 				E133E7501C80865000A6E697 /* ViewController.m */,
+				01E36C111C857C3F0011CB03 /* XRBaseViewController.h */,
+				01E36C121C857C3F0011CB03 /* XRBaseViewController.m */,
+				01E36C141C857C650011CB03 /* PlayListViewController.h */,
+				01E36C151C857C650011CB03 /* PlayListViewController.m */,
+				01E36C171C857C760011CB03 /* PlayerViewController.h */,
+				01E36C181C857C760011CB03 /* PlayerViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -428,7 +456,11 @@
 				010FB4991C843851002E0DDD /* STKDataSource.m in Sources */,
 				010FB4981C843851002E0DDD /* STKCoreFoundationDataSource.m in Sources */,
 				01FDAD351C817024000E8AD7 /* LrcDisplayCell.m in Sources */,
+				01E36C101C857B340011CB03 /* CustomNavigationController.m in Sources */,
+				01E36C131C857C3F0011CB03 /* XRBaseViewController.m in Sources */,
+				01E36C161C857C650011CB03 /* PlayListViewController.m in Sources */,
 				010FB4971C843851002E0DDD /* STKAutoRecoveringHTTPDataSource.m in Sources */,
+				01E36C191C857C760011CB03 /* PlayerViewController.m in Sources */,
 				010FB49C1C843851002E0DDD /* STKLocalFileDataSource.m in Sources */,
 				E133E74D1C8085FB00A6E697 /* LrcModel.m in Sources */,
 				01FDAD391C81A0BF000E8AD7 /* LrcInfoModel.m in Sources */,
