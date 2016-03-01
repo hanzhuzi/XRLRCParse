@@ -6,8 +6,11 @@
 //  Copyright © 2016年 X.R. All rights reserved.
 //
 
+#define FilePathForResource(songName)  [[NSBundle mainBundle] pathForResource:(songName) ofType:nil]
+
 #import "PlayListViewController.h"
 #import "PlayerViewController.h"
+#import "SongModel.h"
 
 @interface PlayListViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -22,7 +25,23 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        self.dataArray = @[@"你看蓝蓝的天 - 杨钰莹", @"落花 - 杨钰莹", @"网络音频"];
+        
+        SongModel * model1 = [[SongModel alloc] init];
+        model1.lrcName = @"你看蓝蓝的天.lrc";
+        model1.songURL = FilePathForResource(@"你看蓝蓝的天.mp3");
+        model1.songName = @"你看蓝蓝的天 - 杨钰莹";
+        
+        SongModel * model2 = [[SongModel alloc] init];
+        model2.lrcName = @"落花.lrc";
+        model2.songURL = FilePathForResource(@"落花.mp3");
+        model2.songName = @"落花 - 杨钰莹";
+        
+        SongModel * model3 = [[SongModel alloc] init];
+        model3.lrcName = @"";
+        model3.songURL = @"http://202.204.208.83/gangqin/download/music/02/03/02/Track08.mp3";
+        model3.songName = @"网络音频";
+        
+        self.dataArray = @[model1, model2, model3];
     }
     
     return self;
@@ -64,9 +83,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
     
-    NSString * title = self.dataArray[indexPath.row];
+    SongModel * model = self.dataArray[indexPath.row];
     cell.textLabel.font = [UIFont systemFontOfSize:17.0];
-    cell.textLabel.text = title;
+    cell.textLabel.text = model.songName;
     
     return cell;
 }
@@ -81,6 +100,8 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     PlayerViewController * playerVc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"PlayerViewController"];
+    SongModel * model = self.dataArray[indexPath.row];
+    playerVc.song = model;
     [self.navigationController pushViewController:playerVc animated:YES];
 }
 

@@ -8,8 +8,9 @@
 
 #import "XRBaseViewController.h"
 
+@class SongModel;
 @interface PlayerViewController : XRBaseViewController
 
-@property (copy, nonatomic) NSString * songName;
+@property (strong, nonatomic) SongModel * song;
 
 @end

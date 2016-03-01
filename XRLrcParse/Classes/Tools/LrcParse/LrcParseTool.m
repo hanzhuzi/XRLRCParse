@@ -96,11 +96,10 @@
         }
         
         // [00:00.33]xxxx
-        if ([lineArray[0] length] > 8) {
+        if ([lineArray[0] length] > 8 || [lineArray[0] length] > 5) {
             NSString * tempStr1 = [lineArray[0] substringWithRange:NSMakeRange(3, 1)];
-            NSString * tempStr2 = [lineArray[0] substringWithRange:NSMakeRange(6, 1)];
             NSString * lrcText = lineArray[lineArray.count - 1];
-            if ([tempStr1 isEqualToString:@":"] && [tempStr2 isEqualToString:@"."]) {
+            if ([tempStr1 isEqualToString:@":"]) {
                 // 解析[00:00.00]xxx 类的歌词
                 for (NSInteger i = 0; i < lineArray.count - 1; i++) {
                     NSString * timeStr = lineArray[i];

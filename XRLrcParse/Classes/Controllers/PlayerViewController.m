@@ -16,6 +16,7 @@
 #import "LrcInfoModel.h"
 #import "LrcDisplayCell.h"
 #import "AudioPlayer.h"
+#import "SongModel.h"
 
 static NSString * const cellID = @"myCellID";
 static int const spaceLineNumber = 5; // 空白行数
@@ -49,12 +50,7 @@ static int const spaceLineNumber = 5; // 空白行数
 - (instancetype)init
 {
     if (self = [super init]) {
-        __weak __typeof(self) weakSelf = self;
         
-        [LrcParseTool lrcInfoFromLrcFileWithFileName:@"你看蓝蓝的天.lrc" completion:^(NSMutableArray *lrcArray, LrcInfoModel *infoModel) {
-            weakSelf.lrcArray = lrcArray;
-            weakSelf.infoModel = infoModel;
-        }];
     }
     
     return self;
@@ -63,9 +59,20 @@ static int const spaceLineNumber = 5; // 空白行数
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super initWithCoder:aDecoder]) {
+        
+    }
+    
+    return self;
+}
+
+- (void)setSong:(SongModel *)song
+{
+    _song = song;
+    
+    if (_song.lrcName && song.lrcName.length > 0) {
         __weak __typeof(self) weakSelf = self;
         
-        [LrcParseTool lrcInfoFromLrcFileWithFileName:@"你看蓝蓝的天.lrc" completion:^(NSMutableArray *lrcArray, LrcInfoModel *infoModel) {
+        [LrcParseTool lrcInfoFromLrcFileWithFileName:song.lrcName completion:^(NSMutableArray *lrcArray, LrcInfoModel *infoModel) {
             weakSelf.lrcArray = lrcArray;
             
             // 为了从中间开始滚动，添加几个空白歌词
@@ -89,13 +96,6 @@ static int const spaceLineNumber = 5; // 空白行数
             weakSelf.infoModel = infoModel;
         }];
     }
-    
-    return self;
-}
-
-- (void)setSongName:(NSString *)songName
-{
-    
 }
 
 // 开启定时器
@@ -124,10 +124,12 @@ static int const spaceLineNumber = 5; // 空白行数
 {
     self.playCtrolSlider.value = self.player.progress;
     [self updateTimeDisplay];
-    for (NSInteger i = spaceLineNumber - 1; i< self.lrcArray.count - spaceLineNumber; i++) {
-        LrcModel * model = self.lrcArray[i];
-        if (self.player.progress >= [model.timeStr doubleValue]) {
-            [self.myTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0] animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+    if (self.lrcArray && self.lrcArray.count > 0) {
+        for (NSInteger i = spaceLineNumber - 1; i< self.lrcArray.count - spaceLineNumber; i++) {
+            LrcModel * model = self.lrcArray[i];
+            if (self.player.progress >= [model.timeStr doubleValue]) {
+                [self.myTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0] animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+            }
         }
     }
 }
@@ -219,9 +221,7 @@ static int const spaceLineNumber = 5; // 空白行数
 {
     self.player = [AudioPlayer sharedAudioPlayer];
     self.player.delegate = self;
-    NSString * fileURL = [[NSBundle mainBundle] pathForResource:@"你看蓝蓝的天" ofType:@"mp3"];
-    NSString * httpURL = @"http://202.204.208.83/gangqin/download/music/02/03/02/Track08.mp3";
-    [self.player playAudioWithAudioSourceURL:fileURL];
+    [self.player playAudioWithAudioSourceURL:_song.songURL];
     [self updateTimeDisplay];
 }
 
@@ -294,20 +294,6 @@ static int const spaceLineNumber = 5; // 空白行数
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-}
-
-#pragma mark - UIScrollViewDelegate
-
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
-{
-    // 停止定时器
-    [self stopTimer];
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
-    // 开启定时器
-    [self startTimer];
 }
 
 #pragma mark - STKAudioPlayerDelegate
