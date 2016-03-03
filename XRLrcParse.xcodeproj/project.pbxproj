@@ -81,7 +81,6 @@
 		010FB4911C843851002E0DDD /* STKLocalFileDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKLocalFileDataSource.m; sourceTree = "<group>"; };
 		010FB4921C843851002E0DDD /* STKQueueEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKQueueEntry.h; sourceTree = "<group>"; };
 		010FB4931C843851002E0DDD /* STKQueueEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKQueueEntry.m; sourceTree = "<group>"; };
-		010FB4941C843851002E0DDD /* StreamingKit-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "StreamingKit-Prefix.pch"; sourceTree = "<group>"; };
 		01D19CB31C802D0F00C963F2 /* XRLrcParse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XRLrcParse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01D19CB71C802D0F00C963F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		01D19CB91C802D0F00C963F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -188,7 +187,6 @@
 				010FB4911C843851002E0DDD /* STKLocalFileDataSource.m */,
 				010FB4921C843851002E0DDD /* STKQueueEntry.h */,
 				010FB4931C843851002E0DDD /* STKQueueEntry.m */,
-				010FB4941C843851002E0DDD /* StreamingKit-Prefix.pch */,
 			);
 			path = StreamingKit;
 			sourceTree = "<group>";

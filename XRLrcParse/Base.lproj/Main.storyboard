@@ -91,8 +91,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EpR-5U-oke" userLabel="bottomView">
                                 <rect key="frame" x="0.0" y="370" width="320" height="110"/>
                                 <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="iRz-EU-OyI">
-                                        <rect key="frame" x="40" y="3" width="240" height="21"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="iRz-EU-OyI">
+                                        <rect key="frame" x="41" y="3" width="238" height="21"/>
                                         <color key="tintColor" red="0.76078431372549016" green="0.098039215686274508" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="YjX-AP-ufd"/>
