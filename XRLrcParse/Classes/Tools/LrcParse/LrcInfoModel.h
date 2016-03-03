@@ -14,8 +14,9 @@
 
 @interface LrcInfoModel : NSObject
 
-@property (nonatomic, copy) NSString * lrc_title;
-@property (nonatomic, copy) NSString * lrc_autor;
-@property (nonatomic, copy) NSString * lrc_create;
+@property (nonatomic, copy) NSString * lrc_title;  // 歌曲名称
+@property (nonatomic, copy) NSString * lrc_autor;  // 演唱者
+@property (nonatomic, copy) NSString * lrc_create; // 歌词制作
+@property (nonatomic, copy) NSString * lrc_album;  // 专辑
 
 @end

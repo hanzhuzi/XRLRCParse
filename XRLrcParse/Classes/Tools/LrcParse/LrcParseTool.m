@@ -24,7 +24,7 @@
 @implementation LrcParseTool
 
 /**
- *  [00:00.00 格式时间字符串转换成对应的秒数字符串
+ *  [00:00.00 or [00:00 格式时间字符串转换成对应的秒数字符串
  */
 + (NSString *)timeStringToSeccondStr:(NSString *)timeStr
 {
@@ -62,6 +62,17 @@
 }
 
 /**
+ *  检测只含有0-9数字
+ */
++ (BOOL)checkOnlyIsNumber:(NSString *)str
+{
+    NSCharacterSet * charSet = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+    NSRange range = [str rangeOfCharacterFromSet:charSet];
+    
+    return range.location == NSNotFound ? NO : YES;
+}
+
+/**
  *  解析歌词（解析本地歌词文件，可根据需要进行扩展，解析从网络下载的歌词数据）
  *  lrc格式： [ti:你若安好 便是晴天]
              [ar:杨钰莹]
@@ -93,13 +104,17 @@
         }else if ([lineLrcStr hasPrefix:@"[by:"]) {
             // 歌词制作
             infoModel.lrc_create = [self parseStrWithLrcString:lineLrcStr];
+        }else if ([lineLrcStr hasPrefix:@"[al:"]) {
+            // 专辑
+            infoModel.lrc_album = [self parseStrWithLrcString:lineLrcStr];
         }
         
-        // [00:00.33]xxxx
-        if ([lineArray[0] length] > 8 || [lineArray[0] length] > 5) {
-            NSString * tempStr1 = [lineArray[0] substringWithRange:NSMakeRange(3, 1)];
+        // [00:00]xxxx or [00:00.22]xxxx
+        if ([lineArray[0] length] > 5) {
+            NSString * tempStr = [lineArray[0] substringWithRange:NSMakeRange(3, 1)];
+            NSString * numStr  = [lineArray[0] substringWithRange:NSMakeRange(1, 1)];
             NSString * lrcText = lineArray[lineArray.count - 1];
-            if ([tempStr1 isEqualToString:@":"]) {
+            if ([tempStr isEqualToString:@":"] && [self checkOnlyIsNumber:numStr]) {
                 // 解析[00:00.00]xxx 类的歌词
                 for (NSInteger i = 0; i < lineArray.count - 1; i++) {
                     NSString * timeStr = lineArray[i];
@@ -125,13 +140,18 @@
 {
     NSMutableArray * modelArr = lrcArr;
     // 选择排序
-    for (NSUInteger i = 0; i < modelArr.count; i++) {
-        for (NSUInteger j = 0; j < modelArr.count; j++) {
-            LrcModel * model1 = modelArr[i];
+    for (NSUInteger i = 0; i < modelArr.count - 1; i++) {
+        NSUInteger k = i;
+        for (NSUInteger j = i+1; j < modelArr.count; j++) {
+            LrcModel * model1 = modelArr[k];
             LrcModel * model2 = modelArr[j];
-            if ([model1.timeStr doubleValue] < [model2.timeStr doubleValue]) {
-                [modelArr exchangeObjectAtIndex:i withObjectAtIndex:j];
+            if ([model1.timeStr doubleValue] > [model2.timeStr doubleValue]) {
+                k = j;
             }
+        }
+        
+        if (k != i) {
+            [modelArr exchangeObjectAtIndex:i withObjectAtIndex:k];
         }
     }
     
