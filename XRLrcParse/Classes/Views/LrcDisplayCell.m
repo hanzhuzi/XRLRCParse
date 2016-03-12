@@ -30,7 +30,7 @@
     
     // 处理选中后的效果
     if (selected) {
-        self.lrcLabel.textColor = [UIColor redColor];
+        self.lrcLabel.textColor = [UIColor colorWithRed:244 / 255.0 green:246 / 255.0 blue:73 / 255.0 alpha:1.0];
         self.lrcLabel.font = [UIFont systemFontOfSize:20];
     }else {
         self.lrcLabel.textColor = [UIColor whiteColor];
